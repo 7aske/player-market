@@ -1,4 +1,5 @@
 services:
+  ### PLAYERS ###
   players-api:
     build: ./players
     restart: always
@@ -21,6 +22,7 @@ services:
       MYSQL_PASSWORD: players_db_pass
       MYSQL_ROOT_PASSWORD: players_db_pass
 
+  ### TEAMS ###
   teams-api:
     build: ./teams
     restart: always
@@ -42,6 +44,31 @@ services:
       MYSQL_USER: teams_db_user
       MYSQL_PASSWORD: teams_db_pass
       MYSQL_ROOT_PASSWORD: teams_db_pass
+
+  ### TRANSFERS ###
+  transfers-api:
+    build: ./transfers
+    restart: always
+    expose:
+      - 8080
+    depends_on:
+      - transfers-db
+    networks: 
+      - player-market
+  transfers-db:
+    build: ./transfers_db
+    restart: always
+    expose:
+      - 3306
+    networks: 
+      - player-market
+    environment:
+      MYSQL_DATABASE: transfers_db
+      MYSQL_USER: transfers_db_user
+      MYSQL_PASSWORD: transfers_db_pass
+      MYSQL_ROOT_PASSWORD: transfers_db_pass
+
+  ### PROXY ###
   proxy:
     build: ./proxy
     restart: always

@@ -1,0 +1,41 @@
+services:
+  players_api:
+    build: ./players
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - players_db
+  players_db:
+      image: "mariadb:latest"
+      restart: always
+      ports:
+        - 3306:3306
+      environment:
+        MYSQL_DATABASE: players_db
+        MYSQL_USER: players_db_user
+        MYSQL_PASSWORD: players_db_pass
+        MYSQL_ROOT_PASSWORD: players_db_pass
+
+  teams_api:
+    build: ./teams
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - teams_db
+  teams_db:
+      image: "mariadb:latest"
+      restart: always
+      ports:
+        - 3306:3306
+      environment:
+        MYSQL_DATABASE: teams_db
+        MYSQL_USER: teams_db_user
+        MYSQL_PASSWORD: teams_db_pass
+        MYSQL_ROOT_PASSWORD: teams_db_pass
+
+networks: 
+  player-market:
+    driver: bridge
+

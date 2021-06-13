@@ -1,4 +1,3 @@
-drop table if exists `team`;
 create table `team`
 (
     `team_id`            int auto_increment primary key,
@@ -12,7 +11,6 @@ create table `team`
     `record_status`      int         default 1
 );
 
-drop table if exists `team_player`;
 create table `team_player`
 (
     `team_fk`            int not null,

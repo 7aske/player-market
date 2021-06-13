@@ -1,4 +1,3 @@
-drop table if exists `player`;
 create table `player`
 (
     `player_id`          int auto_increment primary key,

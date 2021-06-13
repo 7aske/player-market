@@ -1,8 +1,5 @@
 package com.example.players.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.time.*;
-import java.util.*;
 import javax.persistence.*;
 import lombok.*;
 
@@ -21,6 +18,8 @@ public class Player extends Auditable {
 	private String firstName;
 	@Column(name = "last_name")
 	private String lastName;
+	@Column(name = "team_id")
+	private Integer teamId;
 	@Column(name = "months_experience")
 	private Integer monthsExperience;
 	@Column(name = "age")

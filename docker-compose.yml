@@ -1,14 +1,14 @@
 services:
-  players_api:
+  players-api:
     build: ./players
     restart: always
     expose:
       - 8080
     depends_on:
-      - players_db
+      - players-db
     networks: 
       - player-market
-  players_db:
+  players-db:
     build: ./players_db
     restart: always
     expose:
@@ -21,16 +21,16 @@ services:
       MYSQL_PASSWORD: players_db_pass
       MYSQL_ROOT_PASSWORD: players_db_pass
 
-  teams_api:
+  teams-api:
     build: ./teams
     restart: always
     expose:
       - 8080
     depends_on:
-      - teams_db
+      - teams-db
     networks: 
       - player-market
-  teams_db:
+  teams-db:
     build: ./teams_db
     restart: always
     expose:

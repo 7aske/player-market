@@ -1,8 +1,5 @@
 package com.example.teams.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.time.*;
-import java.util.*;
 import javax.persistence.*;
 import lombok.*;
 
@@ -19,7 +16,7 @@ public class Team extends Auditable {
 	private Integer id;
 	@Column(name = "name")
 	private String name;
-	@Column(name = "team_commission")
-	private Integer teamCommission;
-	
+	@Column(name = "commission")
+	private Float commission;
+
 }

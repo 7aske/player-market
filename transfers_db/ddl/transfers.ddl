@@ -4,7 +4,8 @@ create table `transfer`
     `from_team_id`       int   not null,
     `to_team_id`         int   not null,
     `player_id`          int   not null,
-    `transfer_fee`       float null,
+    `transfer_fee`       float     null,
+    `commission`    	 float not null,
 
     -- audit
     `created_date`       timestamp   default CURRENT_TIMESTAMP(),

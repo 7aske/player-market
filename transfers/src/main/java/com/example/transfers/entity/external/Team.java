@@ -12,5 +12,4 @@ import lombok.NoArgsConstructor;
 public class Team extends Auditable {
 	private Integer id;
 	private String name;
-	private Float commission;
 }

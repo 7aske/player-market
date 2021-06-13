@@ -16,7 +16,4 @@ public class Team extends Auditable {
 	private Integer id;
 	@Column(name = "name")
 	private String name;
-	@Column(name = "commission")
-	private Float commission;
-
 }

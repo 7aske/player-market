@@ -6,15 +6,15 @@
 
 * docker-compose
 
+
 ## Usage
 
 In repostiory root:
 
 `docker-compose up`
 
-## Services
 
-Available REST endpoints:
+## Available REST endpoints:
 
 * `http://localhost:8080/players`
 
@@ -22,7 +22,10 @@ Available REST endpoints:
 
 * `http://localhost:8080/transfers`
 
-Swagger docs:
+
+## API Testing
+
+### Swagger docs:
 
 * `http://localhost:8080/players/v2/api-docs`
 
@@ -35,4 +38,9 @@ Swagger docs:
 * `http://localhost:8080/transfers/v2/api-docs`
 
 * `http://localhost:8080/transfers/swagger-ui.html`
+
+### Insomnia 
+
+`insomnia-export.json` file in repository root.
+
 

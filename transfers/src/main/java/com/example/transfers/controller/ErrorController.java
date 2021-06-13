@@ -24,18 +24,6 @@ public class ErrorController {
 		return getResponseError(ex.getMessage(), request, status);
 	}
 
-	// @ExceptionHandler({
-	// 		SQLIntegrityConstraintViolationException.class,
-	// 		DataIntegrityViolationException.class,
-	// 		HttpMessageNotReadableException.class,
-	// 		MethodArgumentTypeMismatchException.class
-	// })
-	// protected ResponseEntity<ResponseError> handleBadRequest(RuntimeException ex, HttpServletRequest request) {
-	// 	HttpStatus status = HttpStatus.BAD_REQUEST;
-	// 	return getResponseError(getErrorMessage(message), request, status);
-	// }
-
-
 	@ExceptionHandler({
 			IllegalArgumentException.class,
 			IllegalStateException.class,

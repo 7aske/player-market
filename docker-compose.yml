@@ -42,6 +42,13 @@ services:
       MYSQL_USER: teams_db_user
       MYSQL_PASSWORD: teams_db_pass
       MYSQL_ROOT_PASSWORD: teams_db_pass
+  proxy:
+    build: ./proxy
+    restart: always
+    networks:
+      - player-market
+    ports:
+      - "8080:80"
 
 networks: 
   player-market:

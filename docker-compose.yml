@@ -9,7 +9,7 @@ services:
     networks: 
       - player-market
   players_db:
-    image: "mariadb:latest"
+    build: ./players_db
     restart: always
     expose:
       - 3306
@@ -31,7 +31,7 @@ services:
     networks: 
       - player-market
   teams_db:
-    image: "mariadb:latest"
+    build: ./teams_db
     restart: always
     expose:
       - 3306
